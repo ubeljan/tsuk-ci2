@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+	
+    RewriteBase /tsuk-ci2/
+	
+	RewriteCond $1 !^(index\.php|afbeeldingen|application|system|robots\.txt)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+</IfModule>
